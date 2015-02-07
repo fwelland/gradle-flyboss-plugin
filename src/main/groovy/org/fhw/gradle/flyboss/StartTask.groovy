@@ -23,14 +23,14 @@ class StartTask extends BaseTask {
             def line
             while ((line = reader.readLine()) != null) {
                 if (line.matches(reggie)) {
-                    println line
+                    logger.info(line)
                     break
                 }
             }            
         }
         else
         {
-            println "seems like wildfly is already started."
+            logger.debug('server already started')
         }
     }
 }

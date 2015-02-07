@@ -13,7 +13,13 @@ class StopTask extends BaseTask {
         def binDir = getBinDir()
         if( isUp() )
         {        
-            executeCLICommand('shutdown')
+            if ( !executeCLICommand('shutdown') ) {
+                logger.warn('stoping appser server failed; app server may not be known')
+            }
         }
+        else {
+            logger.debug('app server is already stopped')
+        }
+        
     }
 }
