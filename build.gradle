@@ -10,7 +10,7 @@ if( hasProperty('buildId') ){  //can come from gradle -PbuildId=....
     version = buildId
 }
 else{
-    def tbid = System.getenv('TRAVIS_JOB_ID')
+    def tbid = System.getenv('TRAVIS_BUILD_NUMBER')
     if(tbid){
         version = tbid
     }
