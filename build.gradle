@@ -6,6 +6,17 @@ version = '0.1'
 def uzer = hasProperty('btIdentity') ? btIdentity : System.getenv('btIdentity')
 def creds = hasProperty('btIDCreds') ? btIDCreds : System.getenv('btIDCreds')
 
+if( hasProperty('buildId') ){  //can come from gradle -PbuildId=....
+    version = buildId
+}
+else{
+    def tbid = System.getenv('TRAVIS_JOB_ID')
+    if(tbid){
+        version = tbid
+    }
+}
+ 
+
 buildscript {
     repositories {
         jcenter()
@@ -72,4 +83,3 @@ bintray {
 task wrapper(type:Wrapper){
     gradleVersion = '2.0'
 }
-
