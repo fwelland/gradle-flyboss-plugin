@@ -72,11 +72,13 @@ bintray {
         repo = 'FredsStuff'
         name = 'gradle-flyboss-plugin'
         desc = 'simple gradle plugin for basic wildfly/jboss server actions on local server instance'
-        websiteUrl = 'http://stupidfredtricks.blogspot.com/2014/08/a-simple-gradle-plugin-for-wildfly-and.html'
+        websiteUrl = 'http://stupidfredtricks.blogspot.com/2015/02/gradle-flyboss-plugin.html'
         vcsUrl = 'https://github.com/fwelland/gradle-flyboss-plugin.git'
         licenses = ['Apache-2.0']
         labels = ['gradle', 'wildfly', 'java', 'jboss']        
-                 
+        version {
+            name = version
+        }      
     }
 }
 
