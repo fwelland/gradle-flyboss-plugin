@@ -2,7 +2,7 @@ language: groovy
 jdk:
 - oraclejdk7
 after_success:
-- ./gradlew  bintrayUpload -PbtIdentity="${btIdentity}" -PbtIDCreds="${btIDCreds} -PbuildID=${TRAVIS_BUILD_NUMBER}"
+- ./gradlew  bintrayUpload -PbtIdentity="${btIdentity}" -PbtIDCreds="${btIDCreds} -PbuildId=${TRAVIS_BUILD_NUMBER}"
 env:
   global:
   - secure: IDYEPSpXn0GlZi8g4TWciVtrY5UYYqSzr7FMq7K3I+oQUlnW437L7dp+7ewuoUs7i53PAKj5njIJezlsqyYdUYTQ8HgS3eTvfW2sT+ucDFmnV5blsn1lh2LhfejI6H4pxHHvbDdVJkPM3/INZr+GO0/IqzTyFLDnTqa3wKnNKAE=
