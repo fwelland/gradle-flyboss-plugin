@@ -2,9 +2,9 @@ language: groovy
 jdk:
 - oraclejdk7
 after_success:
-- ./gradlew --stacktrace --debug  bintrayUpload -PbtIdentity="${btIdentity}" -PbtIDCreds="${btIDCreds}
-  -PbuildId=${TRAVIS_BUILD_NUMBER}"
+- ./gradlew bintrayUpload -PbtIdentity="${btIdentity}" -PbtIDCreds="${btIDCreds}"
+  -PbuildId="${TRAVIS_BUILD_NUMBER}"
 env:
   global:
-  - secure: byG64EB1wICbr2xijrNJfNy1UFy6UWXlC9wfSTQ+85lgI+D4pQiRzHCctPesafqx33Ak62dSg6vQBal1iN8Pe9QZMyvqcF62FqqALontKQlIVC723bOzvRtidRSOXy09f+yGMZrs5EGPIkEbMYNIYBwD5AUa+rg9p31qsb8C6C4=
-  - secure: R0ZTEPEGuK7GUXsaIEcQMGZjZ8FTXkXTGD97J3Z6bowBfkIZlIa5enTD8w+/cGBeYssKCmxyarPvT96m6YXxcCjSF68eNkTRju7HNwQZBaY3PcsUaXXZjNq3FOzoAHVvEZEcrFNH9LUBclg/CPYbYSpAYUZtdiWQaVRVFoYifQc=
+  - secure: YROmYduBO1ZXeffsSH56VqRwEakgK72VXM6CnyyTNvw11YWXM1BzcV2LNbQc+X1E3spAgNrWqcOz+YdK53VF+kC/IPXbbEJWVzYFYAHXaAmk+10tAFd0CPDqh1S7tdUGmwHsNp3QRJ3B3OrbjBckL5sX/+y2KZW4+todRthr6fo=
+  - secure: D8x1tc9o3Vke+6eoE4m88LF8IHivAvh0hF3wPOvt8xnM35CkW3C4MN7WpQVG5MucCmKlf+W9qeBo5lEGNxSUx/mMuSmvo2YFgisrJIOlC3VCBVFFQCasfggCYp4sDdUZBvHSGf2Bipz6HotTUBmXvMfkbX51ZiP2haV4168RsjI=
