@@ -103,5 +103,20 @@ class BaseTaskSpec extends Specification {
         then:  
             !rc
     }           
+    
+    def "Test startup command options"()
+    {
+        given: 
+            Project project = ProjectBuilder.builder().build()
+            project.apply plugin: 'flyboss'
+            project.flyboss.appserver_start_script = 'bean'
+            project.flyboss.appserver_start_script_options = '-b 0.0.0.0'
+            
+        when:
+            def s = project.tasks.start.getAppServerStartCommand()
+            
+        then:  
+            s.endsWith('bean -b 0.0.0.0')
+    }               
 }
 

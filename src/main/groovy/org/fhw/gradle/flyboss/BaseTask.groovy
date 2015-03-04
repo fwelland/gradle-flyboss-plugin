@@ -14,6 +14,11 @@ class BaseTask extends DefaultTask {
         return project.flyboss.appserver_home + "/bin"
     }
     
+    def getAppServerStartCommand()
+    {
+        return getStarterScript() + ' ' + project.flyboss.appserver_start_script_options        
+    }
+    
     def getStarterScript()
     {
         return getBinDir() + '/' + project.flyboss.appserver_start_script
