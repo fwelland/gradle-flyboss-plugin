@@ -13,7 +13,7 @@ class StartTask extends BaseTask {
         def binDir = getBinDir()
         if( ! isUp() )
         {        
-            ProcessBuilder builder = new ProcessBuilder(getStarterScript())
+            ProcessBuilder builder = new ProcessBuilder(getAppServerStartCommand())
             builder.directory(new File(binDir))                    
             builder.redirectErrorStream(true)
             Process process = builder.start()            
