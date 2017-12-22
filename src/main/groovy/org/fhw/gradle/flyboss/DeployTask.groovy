@@ -1,10 +1,6 @@
 package org.fhw.gradle.flyboss
 
 import org.gradle.api.tasks.TaskAction
-import org.gradle.api.tasks.Input
-import org.gradle.api.DefaultTask
-import org.apache.tools.ant.taskdefs.condition.Os
-
 
 class DeployTask extends BaseTask {
     	        
@@ -18,7 +14,7 @@ class DeployTask extends BaseTask {
         }
         else
         {
-            println "start appserver  first"
+                println "start appserver  first"
         }
     }
 }

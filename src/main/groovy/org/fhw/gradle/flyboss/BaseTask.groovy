@@ -74,6 +74,7 @@ class BaseTask extends DefaultTask {
             cmd += ' '
         }                
         cmds.add(cmd)
+        println "executing CLI:  $cmd"
         ProcessBuilder builder = new ProcessBuilder( cmds )                                               
         builder.directory(new File(getBinDir()))                
         builder.redirectErrorStream(true)
@@ -82,7 +83,9 @@ class BaseTask extends DefaultTask {
         BufferedReader reader = new BufferedReader(new InputStreamReader(stdout)) 
         def line
         while ((line = reader.readLine()) != null) 
-        {   }       
+        {   
+            println  "CLI output:  $line"
+        }       
         return( process.waitFor() == 0)                 
     }        
         
